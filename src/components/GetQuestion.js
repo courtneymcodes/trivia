@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 
-const url = "http://jservice.io/api/random"
+
 
 export default function GetQuestion(props) {
   const [triviaData, setTriviaData] = useState([]);
 
+  const url = "http://jservice.io/api/random"
+
+  const getData = async () => {
+    const response = await fetch(url)
+    const data = await response.json()
+    setTriviaData(data[0])
+  }
+
   useEffect(()=>{
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((triviaData) => setTriviaData(triviaData[0]))
-      .catch((error) => console.log(error))
-      
+    getData()
   }, [])
 
 
@@ -24,7 +28,8 @@ export default function GetQuestion(props) {
     const [isAnswerClicked, setAnswerClicked] =useState(false)
 
 function handleQuestionClick() {
-  window.location.reload()
+  getData()
+  setAnswerClicked(false)
 }
 
 function handleAnswerClick() {
