@@ -11,6 +11,8 @@ export default function GetQuestion(props) {
     const response = await fetch(url)
     const data = await response.json()
     setTriviaData(data[0])
+    console.log(data[0])
+    console.log(triviaData)
   }
 
   useEffect(()=>{
@@ -18,9 +20,8 @@ export default function GetQuestion(props) {
   }, [])
 
 
-  const {value,question,answer} = triviaData
+  //const {value,question,answer} = triviaData
       //console.log(triviaData.category.title)
-    //const {value,question,answer} = triviaData
     //const {category:{title}} = triviaData
     
   
@@ -40,11 +41,11 @@ if(isAnswerClicked === false) {
   return (
     <>
       <h2>Let's Play!</h2>
-      <button onClick={handleQuestionClick}>Get random trivia question</button>
-      <h3>Cetegory: {}</h3>
-      <h4>Points: {value}</h4>
-      <h4>Question: {question}</h4>
-      <button onClick={handleAnswerClick}>Click to Reveal Answer</button>
+      <button className="question-btn" onClick={handleQuestionClick}>Get random trivia question</button>
+      <h3>Category: {triviaData.category?.title}</h3>
+      <h3>Points: {triviaData.value}</h3>
+      <h3>Question: {triviaData.question}</h3>
+      <button className="answer-btn" onClick={handleAnswerClick}>Click to Reveal Answer</button>
     </> 
   )
 
@@ -54,12 +55,12 @@ if(isAnswerClicked ) {
  return (
     <>
       <h2>Let's Play!</h2>
-      <button onClick={handleQuestionClick}>Get random trivia question</button>
-      <h3>Cetegory: {}</h3>
-      <h4>Points: {value}</h4>
+      <button className="question-btn" onClick={handleQuestionClick}>Get random trivia question</button>
+      <h3>Category: {triviaData.category?.title}</h3>
+      <h3>Points: {triviaData.value}</h3>
     
-      <h4>Answer: {answer}</h4>
-      <button onClick={handleAnswerClick}>Click to Reveal Answer</button>
+      <h3>Answer: {triviaData.answer}</h3>
+      <button className="answer-btn" onClick={handleAnswerClick}>Click to Reveal Answer</button>
     </> 
   )
 }

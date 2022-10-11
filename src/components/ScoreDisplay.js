@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export default function (props) {
+export default function ScoreDisplay (props) {
 
 const [score, setScore] = useState(0)
 
@@ -20,9 +20,9 @@ function resetScore() {
     return (
         <div>
             <h2>Score: {score} </h2>
-            <button onClick={decrementScore}>Decrease</button>
-            <button onClick={incrementScore}>Increase</button>
-            <button onClick={resetScore}>Reset</button>
+            <button className="increase-btn" onClick={decrementScore}>Decrease</button>
+            <button className="decrease-btn"onClick={incrementScore}>Increase</button>
+            <button className="reset-btn"onClick={resetScore}>Reset</button>
         </div>
     )
 }

@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+
+body {
+  background-color:#577D90;
+}
+
+h1 {
+  color:white
+}
+
+h2 {
+  color: rgb(250, 233, 136)
+}
+
+h3 {
+  color: rgb(250, 233, 136)
+}
+
+.increase-btn {
+  background-color:rgb(255, 153, 158);
+  border-radius: .3em;
+  border: 0;
+  padding: .5em
+}
+
+.decrease-btn {
+  background-color:rgb(40, 189, 189);
+  border-radius: .3em;
+  border: 0;
+  padding: .5em
+}
+
+.reset-btn {
+  background-color:red;
+  border-radius: .3em;
+  border: 0;
+  padding: .5em
+}
+
+.question-btn {
+  background-color:rgb(250, 233, 136);
+  border-radius: .3em;
+  border: 0;
+  padding: .5em
+}
+
+.answer-btn {
+  background-color:navy;
+  color: white;
+  border: 0;
+  padding: .5em
+}
